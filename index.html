@@ -29,12 +29,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <style>
+        /* Hide scrollbar completely */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: none;
+        }
+        
+        /* Hide scrollbar during greeting */
+        body.greeting-active {
+            overflow: hidden;
+        }
+        
+        /* Smooth scrollbar animation */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-inter">
     <!-- Greeting Screen -->
-    <div id="greeting-screen" style="position:fixed;inset:0;z-index:9999;background:black;display:flex;align-items:center;justify-content:center;transition:opacity 1s;">
+    <div id="greeting-screen" style="position:fixed;inset:0;z-index:9999;background:black;display:flex;align-items:center;justify-content:center;transition:opacity 1s;overflow:hidden;">
         <span id="greeting-word" style="font-size:4rem;color:white;font-weight:bold;letter-spacing:2px;"></span>
     </div>
+
+
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
@@ -216,15 +240,7 @@
                                 <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
                             </div>
                         </div>
-                        <div class="skill-item" data-skill="JavaScript">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">JavaScript</span>
-                                <span class="text-gray-500">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
+
                         <div class="skill-item" data-skill="Python">
                             <div class="flex justify-between mb-1">
                                 <span class="text-gray-700">Python</span>
@@ -234,15 +250,7 @@
                                 <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
                             </div>
                         </div>
-                        <div class="skill-item" data-skill="Java">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Java</span>
-                                <span class="text-gray-500">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
+
                         <div class="skill-item" data-skill="SQL">
                             <div class="flex justify-between mb-1">
                                 <span class="text-gray-700">SQL</span>
@@ -252,15 +260,7 @@
                                 <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div class="skill-item" data-skill="HTML/CSS">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">HTML/CSS</span>
-                                <span class="text-gray-500">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
@@ -277,15 +277,7 @@
                                 <div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div class="skill-item" data-skill="Django">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Django</span>
-                                <span class="text-gray-500">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
+
                         <div class="skill-item" data-skill="MongoDB">
                             <div class="flex justify-between mb-1">
                                 <span class="text-gray-700">MongoDB</span>
@@ -353,7 +345,7 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 rounded-full text-sm">👑 Leadership</span>
                         <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 rounded-full text-sm">🤝 Teamwork</span>
-                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 rounded-full text-sm">🎓 Mentorship</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 rounded-full text-sm">💰 Investing</span>
                         <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 rounded-full text-sm">📊 Project Management</span>
                     </div>
                 </div>
@@ -623,12 +615,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 4rem;
+            font-size: 5.5rem;
             color: white;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             opacity: 0;
-            transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
             z-index: 1;
         `;
         
@@ -637,12 +629,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 4rem;
+            font-size: 5.5rem;
             color: white;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             opacity: 0;
-            transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
             z-index: 2;
         `;
         
@@ -659,6 +651,7 @@
     function showGreeting(index) {
         if (index >= greetings.length) {
             greetingScreen.style.opacity = 0;
+            document.body.classList.remove('greeting-active');
             setTimeout(() => greetingScreen.style.display = 'none', 2000);
             return;
         }
@@ -697,11 +690,14 @@
                 
                 // Continue to next greeting
                 showGreeting(index + 1);
-            }, 1200); // Wait for full transition to complete
+            }, 1000); // Wait for full transition to complete (faster)
             
-        }, 1000); // Show each word for 1 second before starting transition
+        }, 800); // Show each word for 0.8 seconds before starting transition (faster)
     }
 
+    // Add body class to hide scrollbar during greeting
+    document.body.classList.add('greeting-active');
+    
     // Start the slow, overlapping animation
     showGreeting(0);
     </script>
