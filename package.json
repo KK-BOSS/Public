@@ -1,0 +1,23 @@
+{
+  "name": "krishna-khanna-portfolio",
+  "version": "1.0.0",
+  "description": "Krishna Khanna's Personal Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "react",
+    "django",
+    "data-analysis"
+  ],
+  "author": "Krishna Khanna",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KK-BOSS/portfolio.git"
+  }
+} 

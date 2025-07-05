@@ -1,0 +1,471 @@
+/* Custom CSS for Krishna Khanna's Portfolio */
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2563eb, #7c3aed);
+}
+
+/* Navigation styles */
+.nav-link,
+.mobile-nav-link {
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.nav-link.active,
+.mobile-nav-link.active {
+    background: #fff !important;
+    color: #111 !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+}
+
+/* Skills panel styles */
+.skills-panel {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.skills-panel.scrolled {
+    opacity: 0.4;
+    background-color: rgba(31, 41, 55, 0.3);
+}
+
+.skills-panel:hover {
+    opacity: 1;
+    background-color: rgba(31, 41, 55, 0.8);
+}
+
+/* Animation classes */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile photo animation */
+.profile-photo {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+    transition: all 0.8s ease-out 2s;
+}
+
+.reveal-item.revealed .profile-photo {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Opening screen animations */
+#opening-screen {
+    opacity: 1;
+    visibility: visible;
+}
+
+#opening-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.greeting-main {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.greeting-sub {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 1s forwards;
+    margin: 0 10px;
+}
+
+.greeting-sub:nth-child(1) { animation-delay: 1.2s; }
+.greeting-sub:nth-child(2) { animation-delay: 1.4s; }
+.greeting-sub:nth-child(3) { animation-delay: 1.6s; }
+.greeting-sub:nth-child(4) { animation-delay: 1.8s; }
+
+/* Multilingual greeting animation (for hero section - removed) */
+.greeting-text {
+    opacity: 0.6;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.greeting-text:hover {
+    opacity: 1;
+    transform: translateY(0);
+    color: #60a5fa;
+}
+
+.greeting-text.active {
+    opacity: 1;
+    transform: translateY(0);
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* Timeline animations */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-item.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Skill bar animations */
+.skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.skill-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-item .bg-blue-400,
+.skill-item .bg-purple-400,
+.skill-item .bg-green-400 {
+    width: 0% !important;
+    transition: width 1.5s ease-out 0.3s;
+}
+
+.skill-item.revealed .bg-blue-400,
+.skill-item.revealed .bg-purple-400,
+.skill-item.revealed .bg-green-400 {
+    width: var(--skill-width) !important;
+}
+
+/* Service card animations */
+.service-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.service-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project card animations */
+.project-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.project-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced micro-interactions */
+.skill-category:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .bg-gray-700 {
+    background-color: #374151 !important;
+    transition: background-color 0.3s ease;
+}
+
+.project-card:hover .bg-gray-700 {
+    background-color: #374151 !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Smooth section transitions */
+section {
+    transition: opacity 0.5s ease;
+}
+
+/* Enhanced button interactions */
+.btn-primary, .bg-gradient-to-r {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after, .bg-gradient-to-r::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::after, .bg-gradient-to-r:hover::after {
+    left: 100%;
+}
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #2563eb, #7c3aed);
+    transition: left 0.3s ease;
+}
+
+.btn-primary:hover::before {
+    left: 0;
+}
+
+.btn-primary span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Form input focus effects */
+.form-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+}
+
+/* Mobile menu animations */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Page loading animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Staggered animation for sections */
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+section:nth-child(6) { animation-delay: 0.6s; }
+
+/* Skill percentage variables */
+.skill-item[data-skill="C++"] .bg-blue-400 { --skill-width: 90%; }
+.skill-item[data-skill="JavaScript"] .bg-blue-400 { --skill-width: 85%; }
+.skill-item[data-skill="Python"] .bg-blue-400 { --skill-width: 80%; }
+.skill-item[data-skill="Java"] .bg-blue-400 { --skill-width: 75%; }
+.skill-item[data-skill="SQL"] .bg-blue-400 { --skill-width: 85%; }
+.skill-item[data-skill="HTML/CSS"] .bg-blue-400 { --skill-width: 90%; }
+
+.skill-item[data-skill="React"] .bg-purple-400 { --skill-width: 85%; }
+.skill-item[data-skill="Django"] .bg-purple-400 { --skill-width: 80%; }
+.skill-item[data-skill="MongoDB"] .bg-purple-400 { --skill-width: 75%; }
+.skill-item[data-skill="Next.js"] .bg-purple-400 { --skill-width: 70%; }
+.skill-item[data-skill="MySQL"] .bg-purple-400 { --skill-width: 85%; }
+
+.skill-item[data-skill="Power BI"] .bg-green-400 { --skill-width: 80%; }
+.skill-item[data-skill="Machine Learning"] .bg-green-400 { --skill-width: 70%; }
+.skill-item[data-skill="AI"] .bg-green-400 { --skill-width: 65%; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-7xl {
+        font-size: 3.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111827;
+    }
+}
+
+/* Print styles */
+@media print {
+    .nav-link,
+    .mobile-menu-button,
+    .btn-primary {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.btn-primary:focus,
+.form-input:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-gray-700 {
+        background-color: #374151 !important;
+    }
+    
+    .text-gray-300 {
+        color: #d1d5db !important;
+    }
+    
+    .text-gray-400 {
+        color: #9ca3af !important;
+    }
+} 
